@@ -133,7 +133,8 @@
   "Prints the error and tries to restart the agent."
   [id]
   (fn [ag ^Exception e]
-    (println "ERROR:" id "agent threw" e (.getMessage e))))
+    (println "ERROR:" id "agent threw" e (.getMessage e))
+    (clojure.stacktrace/print-stack-trace e)))
 
 ;;;;;; end of utils
 
